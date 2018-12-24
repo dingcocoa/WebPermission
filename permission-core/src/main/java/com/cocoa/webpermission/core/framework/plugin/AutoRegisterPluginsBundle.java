@@ -9,20 +9,20 @@ import org.apache.commons.logging.LogFactory;
 
 /**
  * 自动注册插件桩
- * 
- * @author apexking
- * 
+ * @author CocoaDing
+ * created on 2018年12月21日 下午12:08:27	
+ *
  */
-public abstract class AutoRegisterPluginsBundle implements IPluginBundle {
+public abstract class AutoRegisterPluginsBundle implements PluginBundle {
 	
 	protected static final Log loger = LogFactory.getLog(AutoRegisterPluginsBundle.class);
-	private List<IPlugin> plugins;
+	private List<Plugin> plugins;
 
 	/**
 	 * 获取此插件列表
 	 * @return
 	 */
-	public synchronized List<IPlugin> getPlugins() {
+	public synchronized List<Plugin> getPlugins() {
 		return plugins;
 	}
 	
@@ -31,7 +31,7 @@ public abstract class AutoRegisterPluginsBundle implements IPluginBundle {
 	 * @see com.enation.framework.plugin.IPluginBundle#registerPlugin(com.enation.framework.plugin.IPlugin)
 	 */
 	@Override
-	public synchronized void registerPlugin(IPlugin plugin) {
+	public synchronized void registerPlugin(Plugin plugin) {
 		this.registerPlugin1(plugin);
 	}
 	
@@ -40,7 +40,7 @@ public abstract class AutoRegisterPluginsBundle implements IPluginBundle {
 	 * @see com.enation.framework.plugin.IPluginBundle#unRegisterPlugin(com.enation.framework.plugin.IPlugin)
 	 */
 	@Override
-	public synchronized void unRegisterPlugin(IPlugin _plugin) {
+	public synchronized void unRegisterPlugin(Plugin _plugin) {
 
 		if (plugins != null) {
 			plugins.remove(_plugin);
@@ -51,10 +51,10 @@ public abstract class AutoRegisterPluginsBundle implements IPluginBundle {
 	 * 注册插件，将某插件插到某桩下
 	 * @param plugin 插件
 	 */
-	private void registerPlugin1(IPlugin plugin) {
+	private void registerPlugin1(Plugin plugin) {
 		
 		if (plugins == null) {
-			plugins = new ArrayList<IPlugin>();
+			plugins = new ArrayList<Plugin>();
 		}
 		
 		// 判断插件是否已经插入插件桩

@@ -10,6 +10,8 @@
   </modules>
   <properties>
        	<spring.version>4.2.4.RELEASE</spring.version>
+       	<mybatis.version>3.4.6</mybatis.version>
+       	<mybatis-spring.version>1.3.2</mybatis-spring.version>
        	<!-- 测试类 -->
         <hamcrest.version>1.3</hamcrest.version>
         <mockito.version>1.10.19</mockito.version>
@@ -556,8 +558,22 @@
                 <artifactId>javase</artifactId>
                 <version>${zxing.version}</version>
             </dependency>
-
-
+			
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>${mybatis-spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>${mybatis-spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>${mybatis.version}</version>
+			</dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-validator</artifactId>

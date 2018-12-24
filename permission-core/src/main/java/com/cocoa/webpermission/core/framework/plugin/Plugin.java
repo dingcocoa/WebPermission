@@ -1,8 +1,8 @@
 package com.cocoa.webpermission.core.framework.plugin;
 
 /**
- * 插件接口<br/> 实现此接口的插件可被注册至通过IPluginBundle桩化的业务类中。<br/> 推荐插件注册的实现方法：<br/>
- * 插件实现体构造函数为：<br/> public Constructor(IPluginBundle pluginBundle){<br />
+ * 插件接口<br/> 实现此接口的插件可被注册至通过PluginBundle桩化的业务类中。<br/> 推荐插件注册的实现方法：<br/>
+ * 插件实现体构造函数为：<br/> public Constructor(PluginBundle pluginBundle){<br />
  * pluginAble.registerPlugin(this); <br /> }
  * 
  * 
@@ -18,7 +18,7 @@ package com.cocoa.webpermission.core.framework.plugin;
  * created on 2018年12月20日 下午5:57:49	
  *
  */
-public interface IPlugin {
+public interface Plugin {
 
  
 	
