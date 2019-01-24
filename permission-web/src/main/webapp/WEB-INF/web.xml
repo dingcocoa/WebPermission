@@ -19,7 +19,7 @@
 	</listener>
 	<filter>
 		<filter-name>Compress</filter-name>
-		<filter-class>com.cocoa.webpermission.core.framework.gzip.GZIPFilter</filter-class>
+		<filter-class>com.cocoa.webpermission.core.framework.gzip.GZipFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>Compress</filter-name>

@@ -41,15 +41,16 @@
     <property name="acquireRetryAttempts" value="30" />  
     <property name="breakAfterAcquireFailure" value="true" />  
     <property name="testConnectionOnCheckout" value="true" />  
-   </bean>  
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactory">
+   </bean>
+   <bean id="jdbcTemplate" class="com.cocoa.webpermission.core.framework.database.BaseJdbcTemplate"></bean>  
+	<!-- <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactory">
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="mapperLocations" value="classpath:com/cocoa/webpromission/mapper/**/*.xml"></property>
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.cocoa.webpromission.mapper"/>
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-	</bean>
+	</bean> -->
 	<bean id = "transactionManager" 
          class = "org.springframework.jdbc.datasource.DataSourceTransactionManager" > 
          <property name = "dataSource" > 
@@ -69,8 +70,6 @@
 			</props>
 		</property>	
 	</bean>	
-	
-		
 	<!-- 支持 @Transactional 标记 -->
 	<tx:annotation-driven transaction-manager="transactionManager"/>  
 	<aop:aspectj-autoproxy proxy-target-class="true"/>
